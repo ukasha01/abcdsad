@@ -1,11 +1,7 @@
 const product = require('../models/product')
 const cataegories = require("../models/cataegories")
 const { find } = require('../models/cataegories')
-<<<<<<< HEAD
-
-=======
 const cloudinary = require('../helper/uploader')
->>>>>>> 4d6dcf8 (7/28/22)
 getProduct = async (req, res) => {
     try {
         const ProductList = await product.find().populate('category')
@@ -37,15 +33,6 @@ getSpecificProduct = async (req, res) => {
 
 }
 add_product = async (req, res) => {
-<<<<<<< HEAD
-    const { name, description, richDescription, frontImage, images, brand, price, category, inStock, numOfReviews, rating, isFeatured } = req.body
-    try {
-        const catageory = await cataegories.findById(category)
-        // if (!catageory) return res.status(400).send("invalid category")
-
-        const add_product = await product.create({
-            name, description, richDescription, frontImage, images,
-=======
     const { name, description, richDescription, images, brand, price, category, inStock, numOfReviews, rating, isFeatured } = req.body
     const filePath = req.file.path
     // console.log(filename.path)
@@ -61,17 +48,12 @@ add_product = async (req, res) => {
             name, description, richDescription,
             frontImage: imgPath.secure_url,
             images,
->>>>>>> 4d6dcf8 (7/28/22)
             brand, price, category: catageory, inStock, numOfReviews, rating, isFeatured
         })
         res.status(201).send(add_product)
     }
     catch (e) {
-<<<<<<< HEAD
-        res.status(404).json({
-=======
         res.status(400).json({
->>>>>>> 4d6dcf8 (7/28/22)
             success: false,
             message: e.message
         })
@@ -158,8 +140,6 @@ filteProduct = async (req, res) => {
     }
 
 }
-<<<<<<< HEAD
-=======
 setGalleryImage = async (req, res) => {
     const file = req.files
     console.log()
@@ -204,7 +184,6 @@ setGalleryImage = async (req, res) => {
         })
     }
 }
->>>>>>> 4d6dcf8 (7/28/22)
 
 module.exports = {
     getProduct,
@@ -214,10 +193,6 @@ module.exports = {
     updateProduct,
     productCount,
     getFeatureProduct,
-<<<<<<< HEAD
-    filteProduct
-=======
     filteProduct,
     setGalleryImage
->>>>>>> 4d6dcf8 (7/28/22)
 }

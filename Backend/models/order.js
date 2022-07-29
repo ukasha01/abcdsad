@@ -4,11 +4,7 @@ const mongoose = require('mongoose')
 const orderSchema = mongoose.Schema({
     orderitems: [{
         type: mongoose.Schema.Types.ObjectId,
-<<<<<<< HEAD
-        ref: 'orderIems',
-=======
         ref: 'OrderItem',
->>>>>>> 4d6dcf8 (7/28/22)
         require: true
     }],
     shippingAddress: {
@@ -25,11 +21,7 @@ const orderSchema = mongoose.Schema({
     },
     zip: {
         type: String,
-<<<<<<< HEAD
-        require: true
-=======
         // require: true
->>>>>>> 4d6dcf8 (7/28/22)
     },
     phone: {
         type: String,
@@ -48,11 +40,7 @@ const orderSchema = mongoose.Schema({
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-<<<<<<< HEAD
-        ref: 'user'
-=======
         ref: 'User Data'
->>>>>>> 4d6dcf8 (7/28/22)
     },
     dateOrder: {
         type: Date,

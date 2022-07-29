@@ -1,8 +1,5 @@
 const mongoose = require('mongoose')
-<<<<<<< HEAD
-=======
 const { populate, findByIdAndUpdate } = require('../models/order')
->>>>>>> 4d6dcf8 (7/28/22)
 
 
 const order = require('../models/order')
@@ -11,15 +8,6 @@ const orderItem = require('../models/orderItem')
 createOrder = async (req, res) => {
     const { orderitems, shippingAddress, city, country,
         zip, phone, status,
-<<<<<<< HEAD
-        totalPrice, user, dateOrder, ljkslakj } = req.body
-
-    try {
-
-        
-        const createOrder = await order.create({
-            orderitems, shippingAddress, city, country,
-=======
         user, dateOrder } = req.body
     try {
         const orderItemsid = Promise.all(orderitems.map(async orderItems => {
@@ -42,7 +30,6 @@ createOrder = async (req, res) => {
         const createOrder = await order.create({
             orderitems: orderitemsidResolved,
             shippingAddress, city, country,
->>>>>>> 4d6dcf8 (7/28/22)
             zip, phone, status,
             totalPrice, user, dateOrder
         })
@@ -51,29 +38,12 @@ createOrder = async (req, res) => {
     catch (e) {
         res.status(404).json({
             success: false,
-<<<<<<< HEAD
-            message: e.message
-=======
             message: e.stack
->>>>>>> 4d6dcf8 (7/28/22)
         })
     }
 
 }
 getOrder = async (req, res) => {
-<<<<<<< HEAD
-
-}
-getSpecificOrder = async (req, res) => {
-
-}
-deleteOrder = async (req, res) => {
-
-}
-updateOrder = async (req, res) => {
-
-}
-=======
     try {
         const allOrder = await order.find({}).populate("user", "name")
             .sort({ "dateOrder": -1 })
@@ -167,17 +137,13 @@ orderCount = async (req, res) => {
     }
 }
 
->>>>>>> 4d6dcf8 (7/28/22)
 module.exports = {
     createOrder,
     getOrder,
     getSpecificOrder,
     updateOrder,
     deleteOrder,
-<<<<<<< HEAD
-=======
     getSale,
     orderCount,
->>>>>>> 4d6dcf8 (7/28/22)
 
 }

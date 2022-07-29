@@ -12,15 +12,8 @@ const errorHandler = require('./helper/errorhandler')
 app.use(bodyParser.json())
 
 app.use(morgan('tiny'))
-<<<<<<< HEAD
 app.use(mainRouter)
 app.use(errorHandler)
-=======
-app.use('/pulic/uploads' , express.static(__dirname+'/public/uploads'))
-app.use(mainRouter)
-app.use(errorHandler)
-
->>>>>>> 4d6dcf8 (7/28/22)
 // app.use(authjwt)
 require("dotenv/config")
 const api = process.env.API_URL
