@@ -1,6 +1,7 @@
 import React from "react";
 import { TouchableOpacity, View, Dimensions, ScrollView } from "react-native";
 import ProductCard from "./ProductCard.js";
+import StackNavigation from "../../navigation/stackNavigation.js";
 const { width } = Dimensions.get('window')
 export default function ProductList({ item }) {
 
@@ -16,7 +17,7 @@ export default function ProductList({ item }) {
             </View>
 
         </TouchableOpacity>
-        <ProductCard
+        <StackNavigation
             {...item}
         />
     </ScrollView>

@@ -1,4 +1,4 @@
-import { Box, FlatList, Heading, Avatar, HStack, VStack,Text, Spacer } from 'native-base'
+import { Box, FlatList, Heading, Avatar, HStack, VStack, Text, Spacer } from 'native-base'
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 
@@ -27,7 +27,7 @@ const Search_Product = ({ productFilltered }) => {
                                     {item.description}
                                 </Text>
                             </VStack>
-                                <Spacer/>
+                            <Spacer />
 
                         </HStack>
                     </Box>} keyExtractor={item => item._id} />
